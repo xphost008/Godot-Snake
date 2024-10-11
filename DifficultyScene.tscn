@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=3 uid="uid://o87hy7q0er7l"]
+
+[ext_resource type="Script" path="res://DifficultyScene.gd" id="1_dli4o"]
+
+[sub_resource type="SystemFont" id="SystemFont_bij22"]
+font_names = PackedStringArray("Microsoft Yi Baiti")
+font_weight = 700
+
+[node name="DifficultyScene" type="Node2D"]
+script = ExtResource("1_dli4o")
+
+[node name="BridgeButton" type="Button" parent="."]
+offset_left = 642.0
+offset_top = 57.0
+offset_right = 894.0
+offset_bottom = 148.0
+theme_override_font_sizes/font_size = 60
+text = "桥梁"
+
+[node name="CircleButton" type="Button" parent="."]
+offset_left = 351.0
+offset_top = 57.0
+offset_right = 610.0
+offset_bottom = 148.0
+theme_override_font_sizes/font_size = 60
+text = "圆形
+"
+
+[node name="RactButton" type="Button" parent="."]
+offset_left = 74.0
+offset_top = 58.0
+offset_right = 319.0
+offset_bottom = 149.0
+theme_override_font_sizes/font_size = 60
+text = "方形"
+
+[node name="WindmillButton" type="Button" parent="."]
+offset_left = 925.0
+offset_top = 57.0
+offset_right = 1164.0
+offset_bottom = 148.0
+theme_override_font_sizes/font_size = 60
+text = "风车"
+
+[node name="CurrentScene" type="Label" parent="."]
+offset_left = 31.0
+offset_top = 698.0
+offset_right = 482.0
+offset_bottom = 778.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_bij22")
+theme_override_font_sizes/font_size = 60
+text = "当前选中："
+
+[node name="SpeedEdit" type="LineEdit" parent="."]
+offset_left = 549.0
+offset_top = 707.0
+offset_right = 953.0
+offset_bottom = 774.0
+theme_override_font_sizes/font_size = 40
+placeholder_text = "请输入速度（默认4）"
+
+[node name="StartGame" type="Button" parent="."]
+offset_left = 968.0
+offset_top = 707.0
+offset_right = 1168.0
+offset_bottom = 777.0
+theme_override_font_sizes/font_size = 40
+text = "开始游戏"
+
+[connection signal="pressed" from="BridgeButton" to="." method="_on_bridge_button_pressed"]
+[connection signal="pressed" from="CircleButton" to="." method="_on_circle_button_pressed"]
+[connection signal="pressed" from="RactButton" to="." method="_on_ract_button_pressed"]
+[connection signal="pressed" from="WindmillButton" to="." method="_on_windmill_button_pressed"]
+[connection signal="pressed" from="StartGame" to="." method="_on_start_game_pressed"]

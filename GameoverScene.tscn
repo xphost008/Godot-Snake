@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://5qoywm8mqlgk"]
+
+[ext_resource type="Script" path="res://GameoverScene.gd" id="1_hqucx"]
+
+[sub_resource type="SystemFont" id="SystemFont_58du0"]
+font_names = PackedStringArray("SimHei")
+font_weight = 700
+
+[sub_resource type="SystemFont" id="SystemFont_5xiwn"]
+font_names = PackedStringArray("SimHei")
+font_weight = 700
+
+[sub_resource type="SystemFont" id="SystemFont_vqk10"]
+font_names = PackedStringArray("Microsoft YaHei")
+font_weight = 700
+
+[sub_resource type="SystemFont" id="SystemFont_4im20"]
+font_names = PackedStringArray("Microsoft YaHei")
+font_weight = 700
+
+[node name="GameoverScene" type="Node2D"]
+script = ExtResource("1_hqucx")
+
+[node name="OverTitle" type="Label" parent="."]
+offset_left = 453.0
+offset_top = 130.0
+offset_right = 698.0
+offset_bottom = 211.0
+theme_override_fonts/font = SubResource("SystemFont_58du0")
+theme_override_font_sizes/font_size = 80
+text = "你输了"
+
+[node name="OverScore" type="Label" parent="."]
+offset_left = 145.0
+offset_top = 316.0
+offset_right = 533.0
+offset_bottom = 377.0
+theme_override_fonts/font = SubResource("SystemFont_5xiwn")
+theme_override_font_sizes/font_size = 60
+text = "分数："
+
+[node name="RestartButton" type="Button" parent="."]
+offset_left = 478.0
+offset_top = 587.0
+offset_right = 689.0
+offset_bottom = 652.0
+theme_override_fonts/font = SubResource("SystemFont_vqk10")
+theme_override_font_sizes/font_size = 30
+text = "重新开始"
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 485.0
+offset_top = 678.0
+offset_right = 697.0
+offset_bottom = 751.0
+theme_override_fonts/font = SubResource("SystemFont_4im20")
+theme_override_font_sizes/font_size = 30
+text = "回到主菜单"
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

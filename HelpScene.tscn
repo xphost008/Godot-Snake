@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5qretrrtvtrg"]
+
+[ext_resource type="Script" path="res://HelpScene.gd" id="1_ug3l8"]
+
+[sub_resource type="SystemFont" id="SystemFont_y03os"]
+font_names = PackedStringArray("Microsoft YaHei UI")
+
+[sub_resource type="SystemFont" id="SystemFont_8msir"]
+font_names = PackedStringArray("Microsoft JhengHei")
+font_weight = 700
+
+[node name="HelpScene" type="Node2D"]
+script = ExtResource("1_ug3l8")
+
+[node name="HelpContent" type="Label" parent="."]
+offset_left = 334.0
+offset_top = 208.0
+offset_right = 884.0
+offset_bottom = 557.0
+theme_override_fonts/font = SubResource("SystemFont_y03os")
+theme_override_font_sizes/font_size = 40
+text = "撞到墙壁或者装到自身就死啦~
+WASD：移动
+ESC：退出
+速度：0~20，默认4
+场景：默认方形
+初始蛇长度：3格"
+
+[node name="HelpTitle" type="Label" parent="."]
+offset_left = 437.0
+offset_top = 69.0
+offset_right = 757.0
+offset_bottom = 177.0
+theme_override_colors/font_color = Color(0, 0, 0.00392157, 1)
+theme_override_fonts/font = SubResource("SystemFont_8msir")
+theme_override_font_sizes/font_size = 80
+text = "帮助界面"
+
+[node name="HelpReturnButton" type="Button" parent="."]
+offset_left = 502.0
+offset_top = 668.0
+offset_right = 691.0
+offset_bottom = 718.0
+theme_override_font_sizes/font_size = 30
+text = "返回"
+
+[connection signal="pressed" from="HelpReturnButton" to="." method="_on_help_return_button_pressed"]
